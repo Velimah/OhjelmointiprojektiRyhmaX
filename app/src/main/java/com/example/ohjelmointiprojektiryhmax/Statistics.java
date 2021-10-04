@@ -25,8 +25,6 @@ public class Statistics extends AppCompatActivity {
         TextView tv3 = findViewById(R.id.BFP);
         tv3.setText(message3);
 
-
-
     }
 }
 

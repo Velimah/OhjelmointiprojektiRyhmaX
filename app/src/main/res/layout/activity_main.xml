@@ -7,6 +7,37 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/resetButton"
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        android:text="Reset"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/saveButton"
+        app:layout_constraintTop_toBottomOf="@+id/editTextHip"
+        app:layout_constraintVertical_bias="0.505" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/resetButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextHip"
+        app:layout_constraintVertical_bias="0.505" />
+
+    <Button
         android:id="@+id/statisticsButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -34,7 +65,7 @@
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Age"
         android:inputType="numberDecimal"
@@ -113,25 +144,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextWaist" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="125dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="Save"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextHip" />
-
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
@@ -139,17 +158,19 @@
 
         <RadioButton
             android:id="@+id/rButtonMale"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
+            android:layout_weight="1"
             android:text="Male"
             android:textSize="16sp" />
 
         <RadioButton
             android:id="@+id/rButtonFemale"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
+            android:layout_weight="1"
             android:text="Female"
             android:textSize="16sp" />
 
