@@ -7,17 +7,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 
 import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
-    public static final String EXTRA_MESSAGE2 = "com.example.myfirstapp.MESSAGE2";
-    public static final String EXTRA_MESSAGE3 = "com.example.myfirstapp.MESSAGE3";
+    public static final String MESSAGE = "1";
+    public static final String MESSAGE2 = "2";
+    public static final String MESSAGE3 = "3";
     RadioGroup radioGroup;
     EditText age, height, weight, neck, waist, hip;
-    String BMIresult, BMRresult, BFPresult;
+    String BmiResult, BmrResult, BfpResult;
     DecimalFormat df = new DecimalFormat("#.##");
 
 
@@ -32,14 +31,11 @@ public class MainActivity extends AppCompatActivity {
         neck = findViewById(R.id.editTextNeck);
         waist = findViewById(R.id.editTextWaist);
         hip = findViewById(R.id.editTextHip);
-
         radioGroup = findViewById(R.id.radioGroup);
-
 
     }
 
-
-    public void sendMessage(View view) {
+    public void openStatistics(View view) {
 
         Intent intent = new Intent(this, Statistics.class);
 
@@ -60,49 +56,55 @@ public class MainActivity extends AppCompatActivity {
         float bmi = weightV / ((heightV / 100) * (heightV / 100));
 
         if (bmi < 15){
-            BMIresult = " Sairaalloinen alipaino";
-        }else if (bmi < 18){
-            BMIresult = " Merkittävä alipaino";
-        }else if (bmi < 19){
-            BMIresult = " Lievä alipaino";
+            BmiResult = " Very severely underweight";
+        }else if (bmi < 16){
+            BmiResult = " Severely underweight";
+        }else if (bmi < 18.5){
+            BmiResult = " Underweight";
         }else if (bmi < 25){
-            BMIresult = " Normaali paino";
+            BmiResult = " Normal";
         }else if (bmi < 30){
-            BMIresult = " Lievä ylipaino";
+            BmiResult = " Overweight";
         }else if (bmi < 35){
-            BMIresult = " Merkittävä ylipaino";
+            BmiResult = " Moderately obese";
         }else if (bmi < 40){
-            BMIresult = " Vaikea ylipaino";
+            BmiResult = " Severely obese";
+        }else if (bmi < 45){
+            BmiResult = " Very severely obese";
+        }else if (bmi < 50){
+            BmiResult = " Morbidly obese";
+        }else if (bmi < 60){
+            BmiResult = " Super obese";
         }else{
-            BMIresult = " Sairaalloinen ylipaino";
+            BmiResult = " Hyper obese";
         }
-        String BMI = (df.format(bmi) + BMIresult);
-        intent.putExtra(EXTRA_MESSAGE, BMI);
+        String BMI = (df.format(bmi) + BmiResult);
+        intent.putExtra(MESSAGE, BMI);
 
 
         int checkedId = radioGroup.getCheckedRadioButtonId();
         if (checkedId == R.id.rButtonMale) {
             double bmr = 13.397 * weightV + 4.799 * heightV - 5.677 * ageV + 88.362;
-            BMRresult = " Kcal";
-            String BMR = (df.format(bmr)+ BMRresult);
-            intent.putExtra(EXTRA_MESSAGE2, BMR);
+            BmrResult = " Kcal";
+            String BMR = (df.format(bmr)+ BmrResult);
+            intent.putExtra(MESSAGE2, BMR);
         } else if (checkedId == R.id.rButtonFemale) {
             double bmr = 9.247 * weightV + 3.098 * heightV- 4.330 * ageV + 447.593;
-            BMRresult = " Kcal";
-            String BMR = (df.format(bmr) + BMRresult);
-            intent.putExtra(EXTRA_MESSAGE2, BMR);
+            BmrResult = " Kcal";
+            String BMR = (df.format(bmr) + BmrResult);
+            intent.putExtra(MESSAGE2, BMR);
         }
 
         if (checkedId == R.id.rButtonMale) {
             double bfp = (495 / (1.0324 - (0.19077 * Math.log10((waistV - neckV))) + (0.15456 * Math.log10(heightV)))) - 450;
-            BFPresult = " %";
-            String BFP = (df.format(bfp) + BFPresult);
-            intent.putExtra(EXTRA_MESSAGE3, BFP);
+            BfpResult = " %";
+            String BFP = (df.format(bfp) + BfpResult);
+            intent.putExtra(MESSAGE3, BFP);
         } else if (checkedId == R.id.rButtonFemale) {
             double bfp = (495 / (1.29579 - (0.35004 * Math.log10((waistV + hipV - neckV))) + (0.22100 * Math.log10(heightV)))) - 450;
-            BFPresult = " %";
-            String BFP = (df.format(bfp) + BFPresult);
-            intent.putExtra(EXTRA_MESSAGE3, BFP);
+            BfpResult = " %";
+            String BFP = (df.format(bfp) + BfpResult);
+            intent.putExtra(MESSAGE3, BFP);
         }
         startActivity(intent);
     }
