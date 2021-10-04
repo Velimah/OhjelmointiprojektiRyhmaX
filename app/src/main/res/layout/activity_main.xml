@@ -7,11 +7,12 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/statisticsButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
+        android:onClick="sendMessage"
         android:text="Statistics"
         app:layout_constraintEnd_toStartOf="@+id/button3"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,11 +26,11 @@
         android:layout_marginEnd="8dp"
         android:text="Weight Diary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintStart_toEndOf="@+id/statisticsButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextNumberDecimal"
+        android:id="@+id/editTextAge"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -43,7 +44,7 @@
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <EditText
-        android:id="@+id/editTextNumberDecimal2"
+        android:id="@+id/editTextHeight"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -54,10 +55,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextAge" />
 
     <EditText
-        android:id="@+id/editTextNumberDecimal3"
+        android:id="@+id/editTextWeight"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -68,10 +69,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal2" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextHeight" />
 
     <EditText
-        android:id="@+id/editTextNumberDecimal4"
+        android:id="@+id/editTextNeck"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -82,10 +83,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal3" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextWeight" />
 
     <EditText
-        android:id="@+id/editTextNumberDecimal5"
+        android:id="@+id/editTextWaist"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -96,10 +97,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal4" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNeck" />
 
     <EditText
-        android:id="@+id/editTextNumberDecimal6"
+        android:id="@+id/editTextHip"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -110,7 +111,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal5" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextWaist" />
 
     <Button
         android:id="@+id/button"
@@ -123,7 +124,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal6" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextHip" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -134,10 +135,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2">
+        app:layout_constraintTop_toBottomOf="@+id/statisticsButton">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/rButtonMale"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -145,7 +146,7 @@
             android:textSize="16sp" />
 
         <RadioButton
-            android:id="@+id/radioButton5"
+            android:id="@+id/rButtonFemale"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_gravity="center"
