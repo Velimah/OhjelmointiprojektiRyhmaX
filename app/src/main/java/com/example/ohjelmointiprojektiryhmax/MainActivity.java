@@ -52,18 +52,10 @@ public class MainActivity extends AppCompatActivity {
         waist = findViewById(R.id.editTextWaist);
         hip = findViewById(R.id.editTextHip);
         radioGroup = findViewById(R.id.radioGroup);
-        saveButton = findViewById(R.id.saveButton);
         resetButton = findViewById(R.id.resetButton);
 
         loadData();
         updateUI();
-
-        saveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                saveData();
-            }
-        });
 
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,6 +65,19 @@ public class MainActivity extends AppCompatActivity {
                 saveData();
             }
         });
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        saveData();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loadData();
+        updateUI();
     }
 
     public void saveData() {
