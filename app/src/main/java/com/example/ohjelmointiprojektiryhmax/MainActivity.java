@@ -3,14 +3,32 @@ package com.example.ohjelmointiprojektiryhmax;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 
 import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String SHARED_PREFS = "sharedPrefs";
+    private static final String AGE = "age";
+    private static final String HEIGHT = "height";
+    private static final String WEIGHT = "weight";
+    private static final String NECK = "neck";
+    private static final String WAIST = "waist";
+    private static final String HIP = "hip";
+
+    private String ageSp;
+    private String heightSp;
+    private String weightSp;
+    private String neckSp;
+    private String waistSp;
+    private String hipSp;
+
     public static final String MESSAGE = "1";
     public static final String MESSAGE2 = "2";
     public static final String MESSAGE3 = "3";
@@ -18,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     EditText age, height, weight, neck, waist, hip;
     String BmiResult, BmrResult, BfpResult;
     DecimalFormat df = new DecimalFormat("#.##");
+    Button saveButton, resetButton;
 
 
     @Override
@@ -32,7 +51,72 @@ public class MainActivity extends AppCompatActivity {
         waist = findViewById(R.id.editTextWaist);
         hip = findViewById(R.id.editTextHip);
         radioGroup = findViewById(R.id.radioGroup);
+        saveButton = findViewById(R.id.saveButton);
+        resetButton = findViewById(R.id.resetButton);
 
+        loadData();
+        updateUI();
+
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveData();
+            }
+        });
+
+        resetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                resetData();
+                saveData();
+                updateUI();
+            }
+        });
+    }
+
+    public void saveData() {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putString(AGE, age.getText().toString());
+        editor.putString(HEIGHT, height.getText().toString());
+        editor.putString(WEIGHT, weight.getText().toString());
+        editor.putString(NECK, neck.getText().toString());
+        editor.putString(WAIST, waist.getText().toString());
+        editor.putString(HIP, hip.getText().toString());
+
+        editor.apply();
+    }
+
+    public void loadData() {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+
+        ageSp = sharedPreferences.getString(AGE, "");
+        heightSp = sharedPreferences.getString(HEIGHT, "");
+        weightSp = sharedPreferences.getString(WEIGHT, "");
+        neckSp = sharedPreferences.getString(NECK, "");
+        waistSp = sharedPreferences.getString(WAIST, "");
+        hipSp = sharedPreferences.getString(HIP, "");
+    }
+
+    public void resetData() {
+        ageSp = null;
+        heightSp = null;
+        weightSp = null;
+        neckSp = null;
+        waistSp = null;
+        hipSp = null;
+
+        saveData();
+    }
+
+    public void updateUI() {
+        age.setText(ageSp);
+        height.setText(heightSp);
+        weight.setText(weightSp);
+        neck.setText(neckSp);
+        waist.setText(waistSp);
+        hip.setText(hipSp);
     }
 
     public void openStatistics(View view) {
