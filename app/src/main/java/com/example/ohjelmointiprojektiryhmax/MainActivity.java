@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String MESSAGE = "1";
     public static final String MESSAGE2 = "2";
     public static final String MESSAGE3 = "3";
+
     RadioGroup radioGroup;
     EditText age, height, weight, neck, waist, hip;
     String BmiResult, BmrResult, BfpResult;
@@ -68,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 resetData();
-                saveData();
                 updateUI();
+                saveData();
             }
         });
     }
@@ -107,7 +108,6 @@ public class MainActivity extends AppCompatActivity {
         waistSp = null;
         hipSp = null;
 
-        saveData();
     }
 
     public void updateUI() {
