@@ -81,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
         String BMI = (df.format(bmi) + BmiResult);
         intent.putExtra(MESSAGE, BMI);
 
-
         int checkedId = radioGroup.getCheckedRadioButtonId();
         if (checkedId == R.id.rButtonMale) {
             double bmr = 13.397 * weightV + 4.799 * heightV - 5.677 * ageV + 88.362;
@@ -108,4 +107,5 @@ public class MainActivity extends AppCompatActivity {
         }
         startActivity(intent);
     }
+
 }
