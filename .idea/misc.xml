@@ -3,9 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Veikka/AndroidStudioProjects/OhjelmointiprojektiRyhmaX/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/Veikka/AndroidStudioProjects/OhjelmointiprojektiRyhmaX/app/src/main/res/layout/activity_statistics.xml" value="0.25" />
         <entry key="..\:/Users/vekki/AndroidStudioProjects/OhjelmointiprojektiRyhmaX/app/src/main/res/layout/activity_main.xml" value="0.2692307692307692" />
+        <entry key="..\:/Users/vekki/AndroidStudioProjects/OhjelmointiprojektiRyhmaX/app/src/main/res/layout/activity_statistics.xml" value="0.25" />
+        <entry key="..\:/Users/vekki/AndroidStudioProjects/OhjelmointiprojektiRyhmaX/app/src/main/res/layout/activity_weight_diary.xml" value="0.25" />
       </map>
     </option>
   </component>

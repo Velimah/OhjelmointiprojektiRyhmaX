@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     EditText age, height, weight, neck, waist, hip;
     String BmiResult, BmrResult, BfpResult;
     DecimalFormat df = new DecimalFormat("#.##");
-    Button saveButton, resetButton;
+    Button resetButton;
 
 
     @Override
@@ -197,4 +197,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void openWeightDiary(View view) {
+        Intent intent = new Intent(this, WeightDiary.class);
+        startActivity(intent);
+    }
 }
