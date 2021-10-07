@@ -33,11 +33,12 @@ public class MainActivity extends AppCompatActivity {
     public static final String MESSAGE2 = "2";
     public static final String MESSAGE3 = "3";
 
-    RadioGroup radioGroup;
+
     EditText age, height, weight, neck, waist, hip;
     String BmiResult, BmrResult, BfpResult;
-    DecimalFormat df = new DecimalFormat("#.##");
     Button resetButton;
+    RadioGroup radioGroup;
+    DecimalFormat df = new DecimalFormat("#.##");
 
 
     @Override
