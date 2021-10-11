@@ -6,6 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+/**
+ * Statistic class shows Body Mass Index, Basal Metabolic Rate and Body Fat Percentage
+ * based on calculations in MainActivity Class
+ *
+ * @author  Veli-Matti Heino
+ * @version 1.1
+ * @since   2021-10-11
+ */
 public class Statistics extends AppCompatActivity {
 
     @Override

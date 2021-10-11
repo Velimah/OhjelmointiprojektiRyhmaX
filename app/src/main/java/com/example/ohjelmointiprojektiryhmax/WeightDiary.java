@@ -11,13 +11,22 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+/**
+ * WeightDiary class contains a ListView of weights.
+ *
+ * @author  Veli-Matti Heino
+ * @version 1.1
+ * @since   2021-10-11
+ */
 public class WeightDiary extends AppCompatActivity {
     private Button saveButton;
     private EditText editTextNewWeight;
     private ListView listView;
 
+    // arraylist to contain weight updates
     ArrayAdapter<String> adapter;
     ArrayList<String> list = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,23 +34,31 @@ public class WeightDiary extends AppCompatActivity {
         setContentView(R.layout.activity_weight_diary);
 
         saveButton = findViewById(R.id.saveButton);
-        editTextNewWeight = findViewById(R.id.editTextNewWeight);
-        listView = findViewById(R.id.listView);
+        editTextNewWeight = findViewById(R.id.editTextNewWeight);listView = findViewById(R.id.listView);
 
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,list);
         listView.setAdapter(adapter);
 
     }
 
+    /**
+     * saveData() saves new weight into arraylist and shows it in ListView . Not Complete.
+     */
     public void saveData(View view) {
         if (editTextNewWeight.getText().toString().isEmpty()) {
             editTextNewWeight.setError("Enter weight");
         }
         else {
-            list.add(editTextNewWeight.getText().toString());
-            editTextNewWeight.setText("");
-            adapter.notifyDataSetChanged();
-        }
 
+            String one = editTextNewWeight.getText().toString();
+            list.add(one);
+            adapter.notifyDataSetChanged();
+
+            if (list != null && !list.isEmpty()) {
+
+            }
+            editTextNewWeight.setText("");
+
+        }
     }
 }

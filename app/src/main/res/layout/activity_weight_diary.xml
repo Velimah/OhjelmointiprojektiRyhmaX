@@ -8,8 +8,8 @@
 
     <EditText
         android:id="@+id/editTextNewWeight"
-        android:layout_width="199dp"
-        android:layout_height="51dp"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
@@ -25,8 +25,8 @@
 
     <Button
         android:id="@+id/saveButton"
-        android:layout_width="81dp"
-        android:layout_height="51dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
@@ -37,7 +37,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editTextNewWeight"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.482" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ListView
         android:id="@+id/listView"
