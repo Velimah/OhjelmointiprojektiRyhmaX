@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String MESSAGE = "1";
     public static final String MESSAGE2 = "2";
     public static final String MESSAGE3 = "3";
+    public static final String MESSAGE4 = "4";
 
 
     EditText age, height, weight, neck, waist, hip, goal;
@@ -289,6 +290,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void openWeightDiary(View view) {
         Intent intent = new Intent(this, WeightDiary.class);
+        intent.putExtra(MESSAGE4, goal.getText().toString());
         startActivity(intent);
     }
 }

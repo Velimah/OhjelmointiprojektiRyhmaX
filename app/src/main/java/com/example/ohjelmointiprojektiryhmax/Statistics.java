@@ -21,11 +21,13 @@ public class Statistics extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistics);
 
+        // gets BMI, BMR and BFP Strings from MESSAGES
         Intent intent = getIntent();
         String message = intent.getStringExtra(MainActivity.MESSAGE);
         String message2 = intent.getStringExtra(MainActivity.MESSAGE2);
         String message3 = intent.getStringExtra(MainActivity.MESSAGE3);
 
+        //sets textViews to show BMI, BMR, BFP
         TextView tv = findViewById(R.id.BMI);
         tv.setText(message);
         TextView tv2 = findViewById(R.id.BMR);
