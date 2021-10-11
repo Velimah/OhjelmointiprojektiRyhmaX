@@ -3,11 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/vekki/AndroidStudioProjects/OhjelmointiprojektiRyhmaX/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/vekki/AndroidStudioProjects/OhjelmointiprojektiRyhmaX/app/src/main/res/layout/activity_statistics.xml" value="0.25" />
-        <entry key="..\:/Users/vekki/AndroidStudioProjects/OhjelmointiprojektiRyhmaX/app/src/main/res/layout/activity_weight_diary.xml" value="0.25" />
+        <entry key="..\:/Users/Veikka/AndroidStudioProjects/OhjelmointiprojektiRyhmaX/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Veikka/AndroidStudioProjects/OhjelmointiprojektiRyhmaX/app/src/main/res/layout/activity_statistics.xml" value="0.25" />
+        <entry key="..\:/Users/Veikka/AndroidStudioProjects/OhjelmointiprojektiRyhmaX/app/src/main/res/layout/activity_weight_diary.xml" value="0.33" />
+        <entry key="..\:/Users/vekki/AndroidStudioProjects/OhjelmointiprojektiRyhmaX/app/src/main/res/layout/activity_main.xml" value="0.2692307692307692" />
       </map>
     </option>
+  </component>
+  <component name="JavadocGenerationManager">
+    <option name="OUTPUT_DIRECTORY" value="$USER_HOME$/Desktop" />
+    <option name="OPTION_DOCUMENT_TAG_AUTHOR" value="true" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />

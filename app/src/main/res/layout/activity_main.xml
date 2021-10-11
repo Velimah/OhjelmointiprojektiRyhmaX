@@ -14,7 +14,7 @@
         android:layout_marginBottom="32dp"
         android:background="@android:color/holo_red_dark"
         android:text="Reset"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,14 +28,14 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:onClick="openStatistics"
-        android:text="Statistics"
+        android:text="Health data"
         android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintEnd_toStartOf="@+id/weightDiaryButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/weightDiaryButton"
         android:layout_width="200dp"
         android:layout_height="70dp"
         android:layout_marginTop="8dp"
