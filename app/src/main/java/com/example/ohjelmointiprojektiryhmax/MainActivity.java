@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, Statistics.class);
 
-         // checks if the editText fields are empty and gives an error message if needed.
+         // checks if the editText fields are empty and gives an error message if they are.
         if (age.getText().toString().isEmpty()) {
             age.setError("Enter age");
         }
@@ -198,15 +198,15 @@ public class MainActivity extends AppCompatActivity {
             String six = hip.getText().toString();
 
             //changes Strings to floats to be able to count
-            float ageV = Float.parseFloat(one);
-            float heightV = Float.parseFloat(two);
-            float weightV = Float.parseFloat(three);
-            float neckV = Float.parseFloat(four);
-            float waistV = Float.parseFloat(five);
-            float hipV = Float.parseFloat(six);
+            float ageInt = Float.parseFloat(one);
+            float heightInt = Float.parseFloat(two);
+            float weightInt = Float.parseFloat(three);
+            float neckInt = Float.parseFloat(four);
+            float waistInt = Float.parseFloat(five);
+            float hipInt = Float.parseFloat(six);
 
             //calculates Body Mass Index
-            float bmi = weightV / ((heightV / 100) * (heightV / 100));
+            float bmi = weightInt / ((heightInt / 100) * (heightInt / 100));
 
             //chooses the correct String based on bmi value.
             if (bmi < 15) {
@@ -241,7 +241,7 @@ public class MainActivity extends AppCompatActivity {
             int checkedId = radioGroup.getCheckedRadioButtonId();
             if (checkedId == R.id.rButtonMale) {
                 //Calculates Basal Metabolic Rate for males
-                double bmr = 13.397 * weightV + 4.799 * heightV - 5.677 * ageV + 88.362;
+                double bmr = 13.397 * weightInt + 4.799 * heightInt - 5.677 * ageInt + 88.362;
                 BmrResult = " Kcal";
 
                 /*  Changes bmr to .xx digit format and adds BmrResult String then combines them
@@ -251,7 +251,7 @@ public class MainActivity extends AppCompatActivity {
 
             } else if (checkedId == R.id.rButtonFemale) {
                 // Calculates Basal Metabolic Rate for females
-                double bmr = 9.247 * weightV + 3.098 * heightV - 4.330 * ageV + 447.593;
+                double bmr = 9.247 * weightInt + 3.098 * heightInt - 4.330 * ageInt + 447.593;
                 BmrResult = " Kcal";
 
                 /*  Changes bmr to .xx digit format and adds BmrResult String then combines them
@@ -262,7 +262,7 @@ public class MainActivity extends AppCompatActivity {
             // Checks the male/female Radiobutton and chooses the correct calculation.
             if (checkedId == R.id.rButtonMale) {
                 //Calculates Body Fat Percentage for males
-                double bfp = (495 / (1.0324 - (0.19077 * Math.log10((waistV - neckV))) + (0.15456 * Math.log10(heightV)))) - 450;
+                double bfp = (495 / (1.0324 - (0.19077 * Math.log10((waistInt - neckInt))) + (0.15456 * Math.log10(heightInt)))) - 450;
                 BfpResult = " %";
 
                 /*  Changes bfp to .xx digit format and adds BfpResult String then combines them
@@ -272,7 +272,7 @@ public class MainActivity extends AppCompatActivity {
 
             } else if (checkedId == R.id.rButtonFemale) {
                 //Calculates Body Fat Percentage for females
-                double bfp = (495 / (1.29579 - (0.35004 * Math.log10((waistV + hipV - neckV))) + (0.22100 * Math.log10(heightV)))) - 450;
+                double bfp = (495 / (1.29579 - (0.35004 * Math.log10((waistInt + hipInt - neckInt))) + (0.22100 * Math.log10(heightInt)))) - 450;
                 BfpResult = " %";
 
                 /*  Changes bfp to .xx digit format and adds BfpResult String then combines them

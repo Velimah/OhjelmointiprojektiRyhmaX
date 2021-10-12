@@ -25,7 +25,7 @@ public class WeightDiary extends AppCompatActivity {
     private EditText editTextNewWeight;
     private ListView listView;
 
-    // arraylist to contain weight updates
+    // creates an arraylist to have weight updates
     ArrayAdapter<String> adapter;
     ArrayList<String> list = new ArrayList<>();
 
@@ -54,7 +54,7 @@ public class WeightDiary extends AppCompatActivity {
     /**
      * saveData() saves new weight into arraylist and shows it in ListView . Not Complete.
      */
-    public void saveData(View view) {
+    public void saveData2(View view) {
         if (editTextNewWeight.getText().toString().isEmpty()) {
             editTextNewWeight.setError("Enter weight");
         }
