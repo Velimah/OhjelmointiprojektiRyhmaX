@@ -170,22 +170,22 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Statistics.class);
 
          // checks if the editText fields are empty and gives an error message if they are.
-        if (age.getText().toString().isEmpty()) {
+        if (age.getText().toString().isEmpty() || age.getText().toString().equals(".")) {
             age.setError("Enter age");
         }
-        else if (height.getText().toString().isEmpty()) {
+        else if (height.getText().toString().isEmpty() || height.getText().toString().equals(".")) {
             height.setError("Enter height");
         }
-        else if (weight.getText().toString().isEmpty()) {
+        else if (weight.getText().toString().isEmpty() || weight.getText().toString().equals(".")) {
             weight.setError("Enter weight");
         }
-        else if (neck.getText().toString().isEmpty()) {
+        else if (neck.getText().toString().isEmpty() || neck.getText().toString().equals(".")) {
             neck.setError("Enter neck circumference");
         }
-        else if (waist.getText().toString().isEmpty()) {
+        else if (waist.getText().toString().isEmpty() || waist.getText().toString().equals(".")) {
             waist.setError("Enter waist circumference");
         }
-        else if (hip.getText().toString().isEmpty()) {
+        else if (hip.getText().toString().isEmpty() || hip.getText().toString().equals(".")) {
             hip.setError("Enter hip circumference");
         } else {
 

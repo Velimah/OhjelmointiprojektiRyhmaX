@@ -55,7 +55,7 @@ public class WeightDiary extends AppCompatActivity {
      * saveData() saves new weight into arraylist and shows it in ListView . Not Complete.
      */
     public void saveData2(View view) {
-        if (editTextNewWeight.getText().toString().isEmpty()) {
+        if (editTextNewWeight.getText().toString().isEmpty() || editTextNewWeight.getText().toString().equals(".")) {
             editTextNewWeight.setError("Enter weight");
         }
         else {
